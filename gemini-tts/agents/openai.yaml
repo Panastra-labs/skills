@@ -1,0 +1,7 @@
+interface:
+  display_name: "Gemini TTS"
+  short_description: "Generate AI voiceover audio using Google Gemini TTS."
+  default_prompt: "Use $gemini-tts to generate a voiceover for my script."
+dependencies:
+  tools:
+    - scripts/tts_tools.py
