@@ -1,8 +1,0 @@
-interface:
-  display_name: "PageSpeed Analyzer"
-  short_description: "Run Google PageSpeed audits with rich diagnostics."
-  default_prompt: "Use $pagespeed-analyzer to audit a URL and explain the top performance fixes."
-dependencies:
-  tools:
-    - scripts/run_pagespeed.py
-    - scripts/requirements.txt

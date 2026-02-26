@@ -1,13 +1,13 @@
 ---
 name: pagespeed-analyzer
-description: Run and troubleshoot Google PageSpeed Insights audits with a local pagespeed_analyzer.py script. Use when asked to audit a URL, compare mobile and desktop performance, extract Lighthouse issues and pinpoint evidence, set up PageSpeed API credentials, or recommend website performance fixes from PSI output.
+description: Measure website performance, find PageSpeed/Lighthouse issues, and guide high-impact optimization fixes for better SEO and user experience.
 ---
 
 # PageSpeed Analyzer
 
 ## Overview
 
-Use this skill to run repeatable PageSpeed Insights audits through a local `pagespeed_analyzer.py` script and turn PSI output into prioritized fixes.
+Use this skill to audit site performance, identify issues, and prioritize fixes with repeatable runs of the local `pagespeed_analyzer.py` script.
 
 ## Prerequisites
 
