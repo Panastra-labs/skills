@@ -19,6 +19,9 @@ pip install -r scripts/requirements.txt
 
 2. Create a Google API key for PageSpeed Insights:
 
+- Use the official quickstart: `https://developers.google.com/speed/docs/insights/v5/get-started`
+- Or manually:
+
 1. Open Google Cloud Console.
 2. Create or select a project.
 3. Go to `APIs & Services` -> `Library`.
@@ -32,8 +35,6 @@ pip install -r scripts/requirements.txt
 PAGE_SPEED_INSIGHTS_API_KEY=your_key_here
 PAGESPEED_API_KEY=your_key_here
 ```
-
-Do not rely on Gemini-specific keys for this skill.
 
 ## Core Workflow
 
