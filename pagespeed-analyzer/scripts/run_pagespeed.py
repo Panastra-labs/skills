@@ -60,11 +60,26 @@ def parse_args() -> tuple[argparse.Namespace, list[str]]:
     return parser.parse_known_args()
 
 
+def has_api_key_env_flag(passthrough: list[str]) -> bool:
+    for arg in passthrough:
+        if arg == "--api-key-env":
+            return True
+        if arg.startswith("--api-key-env="):
+            return True
+    return False
+
+
 def main() -> int:
     args, passthrough = parse_args()
     analyzer_path = find_analyzer_path(args.analyzer_path)
+    forwarded_flags = list(passthrough)
 
-    cmd = [sys.executable, str(analyzer_path), args.url, *passthrough]
+    if not has_api_key_env_flag(forwarded_flags):
+        forwarded_flags.extend(
+            ["--api-key-env", "PAGE_SPEED_INSIGHTS_API_KEY,PAGESPEED_API_KEY"]
+        )
+
+    cmd = [sys.executable, str(analyzer_path), args.url, *forwarded_flags]
     result = subprocess.run(cmd)
     return result.returncode
 

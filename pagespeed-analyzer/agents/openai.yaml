@@ -4,5 +4,5 @@ interface:
   default_prompt: "Use $pagespeed-analyzer to audit a URL and explain the top performance fixes."
 dependencies:
   tools:
-    - scripts/check_setup.py
     - scripts/run_pagespeed.py
+    - scripts/requirements.txt
