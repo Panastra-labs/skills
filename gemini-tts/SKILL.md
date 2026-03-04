@@ -1,6 +1,6 @@
 ---
 name: gemini-tts
-description: Generate AI voiceover audio using Gemini TTS. Use when generating speech, narration, or dialogue audio: single-speaker narration, multi-speaker conversations, voice selection, style/tone prompting, audio duration measurement, and audio quality inspection.
+description: "Generate AI voiceover audio using Gemini TTS. Use when generating speech, narration, or dialogue audio: single-speaker narration, multi-speaker conversations, voice selection, style/tone prompting, audio duration measurement, and audio quality inspection."
 ---
 
 ## Setup
@@ -10,7 +10,7 @@ description: Generate AI voiceover audio using Gemini TTS. Use when generating s
 pip install -r scripts/requirements.txt
 ```
 
-**API key** — set `GOOGLE_API_KEY` in your environment or a `.env` file:
+**API key** â€” set `GOOGLE_API_KEY` in your environment or a `.env` file:
 ```
 GOOGLE_API_KEY=your_key_here
 ```
@@ -22,7 +22,7 @@ from scripts.tts_tools import generate_speech, get_asset_info, inspect_asset
 
 ---
 
-## Quick Start — Simple TTS
+## Quick Start â€” Simple TTS
 
 ```python
 generate_speech(text="Welcome to our product tour.")
@@ -52,7 +52,7 @@ Pick a voice that fits the tone:
 | Soft / calm           | Achernar (Soft), Enceladus (Breathy) |
 | Casual / conversational | Zubenelgenubi (Casual), Callirrhoe (Easy-going), Umbriel (Easy-going) |
 
-Full 30-voice list → `references/voices.md`
+Full 30-voice list â†’ `references/voices.md`
 
 ### Adding Style
 
@@ -81,16 +81,16 @@ Sam: Yeah, it looks incredible!""",
 - Speaker names must exactly match the labels used in the text.
 - Multi-speaker only works with `gemini-2.5-flash-preview-tts`.
 
-Full multi-speaker details → `references/multi-speaker.md`
+Full multi-speaker details â†’ `references/multi-speaker.md`
 
 ---
 
 ## Core Workflow
 
-1. **Generate** with `generate_speech(...)` → saves WAV to your output path.
-2. **Measure** with `get_asset_info(...)` → get exact duration.
-3. **Adjust** — if duration doesn't match target, rewrite text shorter/longer and regenerate.
-4. **Validate** with `inspect_asset(...)` → check pronunciation, pacing, emotional fit.
+1. **Generate** with `generate_speech(...)` â†’ saves WAV to your output path.
+2. **Measure** with `get_asset_info(...)` â†’ get exact duration.
+3. **Adjust** â€” if duration doesn't match target, rewrite text shorter/longer and regenerate.
+4. **Validate** with `inspect_asset(...)` â†’ check pronunciation, pacing, emotional fit.
 5. **Iterate** chunk by chunk until satisfied.
 
 ---
@@ -144,8 +144,8 @@ Uploads the file to Gemini and returns an analysis (tone, pacing, quality issues
 
 | Model                              | Single | Multi | Notes |
 |------------------------------------|:------:|:-----:|-------|
-| `gemini-2.5-flash-preview-tts`     | ✓ | ✓ | Default. Fast. Use for most tasks. |
-| `gemini-2.5-pro-preview-tts`       | ✓ | ✗ | Higher quality single-speaker only. |
+| `gemini-2.5-flash-preview-tts`     | âœ“ | âœ“ | Default. Fast. Use for most tasks. |
+| `gemini-2.5-pro-preview-tts`       | âœ“ | âœ— | Higher quality single-speaker only. |
 
 > **Note**: Both models are in preview. Model IDs may change when they reach GA.
 
@@ -159,12 +159,12 @@ For simple tasks, a one-line `style_prompt` is enough:
 - `"Whisper softly, like telling a secret."`
 
 For complex performances, structure the prompt:
-1. **Audio Profile** — Who is speaking (name, role, character).
-2. **Scene** — Environment, mood.
-3. **Director's Notes** — Style, pacing, accent.
-4. **Transcript** — The actual text.
+1. **Audio Profile** â€” Who is speaking (name, role, character).
+2. **Scene** â€” Environment, mood.
+3. **Director's Notes** â€” Style, pacing, accent.
+4. **Transcript** â€” The actual text.
 
-Full prompting guide → `references/prompting-style-and-flow.md`
+Full prompting guide â†’ `references/prompting-style-and-flow.md`
 
 ---
 
